@@ -185,12 +185,13 @@ hr{
     cursor: pointer;
     position: relative;
 }
-
+/* turning the + sign to * sign by adding the transition to label::after */
 label::after{
     content: '+';
     font-size: 20px;
     position: absolute;
     right: 20px;
+    transition: transform 0.5s;
 }
 
 input[type="radio"]{
@@ -209,4 +210,21 @@ input[type="radio"]{
 .accordian input[type="radio"]:checked + label + .content{
     max-height: 600px;
     padding: 30px 20px;
+}
+
+/* this is for the + button in the accordian */
+
+.accordian input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+
+
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+
+}
+
+.faq small{
+    font-size: 13px;
 }
